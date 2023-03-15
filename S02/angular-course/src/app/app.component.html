@@ -7,7 +7,17 @@
 
 
 <div class="courses">
-    <course-card *ngFor="let course of courses; index as idx" (courseSelected)="onCourseSelected($event)" [course]="course" [currentIndex]="idx + 1"></course-card>
+    <course-card *ngFor="let course of courses;
+      index as idx; first as isFirst; last as isLast;
+      even as isEven; odd as isOdd"
+    [class.is-first]="isFirst"
+    [class.is-last]="isLast"
+    [class.is-even]="isEven"
+    [class.is-add]="isOdd"
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+    [currentIndex]="idx + 1">
+  </course-card>
 </div>
 
 
