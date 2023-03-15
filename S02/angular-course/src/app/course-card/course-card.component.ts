@@ -29,4 +29,8 @@ export class CourseCardComponent implements OnInit {
   getCardClass() {
     return { 'beginner': this.course.category === 'BEGINNER', 'other-class': true }
   }
+
+  getCardStyle() {
+    return { 'text-decoration': 'underline' }
+  }
 }
