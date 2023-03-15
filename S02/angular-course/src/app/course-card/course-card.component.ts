@@ -31,6 +31,6 @@ export class CourseCardComponent implements OnInit {
   }
 
   getCardStyle() {
-    return { 'text-decoration': 'underline' }
+    return { 'background-image': 'url(' + this.course.iconUrl + ')' }
   }
 }
