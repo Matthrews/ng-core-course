@@ -1,5 +1,5 @@
 <div class="course-card" *ngIf="course"
-  [ngClass]="{ 'beginner': false, 'other-class': true }">
+  [ngClass]="getCardClass()">
 
   <div class="course-title">
     {{ currentIndex + '  ' +  course.description }}

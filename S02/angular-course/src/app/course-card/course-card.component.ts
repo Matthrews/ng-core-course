@@ -25,4 +25,8 @@ export class CourseCardComponent implements OnInit {
   viewCourceClicked() {
     this.courseEmitter.emit(this.course)
   }
+
+  getCardClass() {
+    return { 'beginner': this.course.category === 'BEGINNER', 'other-class': true }
+  }
 }
