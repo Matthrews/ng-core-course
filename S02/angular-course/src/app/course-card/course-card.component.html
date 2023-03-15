@@ -1,9 +1,9 @@
-<div class="course-card">
+<div class="course-card" *ngIf="course">
 
   <div class="course-title">
     {{ currentIndex + '  ' +  course.description }}
   </div>
-  <img width="300" alt="Angular Logo"
+  <img width="300" alt="Angular Logo" *ngIf="course.iconUrl"
     [src]="course.iconUrl">
 
   <div class="course-description">
