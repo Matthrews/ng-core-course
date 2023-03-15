@@ -10,4 +10,8 @@ export class AppComponent {
     coreCouse = COURSES[0]
     rxjsCouse = COURSES[1]
     ngrxCouse = COURSES[2]
+
+    onCourseSelected($event) {
+      console.log('onCourseSelected', $event);
+    }
 }
