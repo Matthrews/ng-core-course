@@ -7,9 +7,7 @@ import { COURSES } from '../db-data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    coreCouse = COURSES[0]
-    rxjsCouse = COURSES[1]
-    ngrxCouse = COURSES[2]
+    courses = COURSES;
 
     onCourseSelected($event) {
       console.log('onCourseSelected', $event);
