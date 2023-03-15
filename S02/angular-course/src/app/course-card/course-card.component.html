@@ -1,7 +1,7 @@
 <div class="course-card" *ngIf="course"
   [ngClass]="getCardClass()">
 
-  <div class="course-title">
+  <div class="course-title" [ngStyle]="{ 'text-decoration': 'underline' }">
     {{ currentIndex + '  ' +  course.description }}
   </div>
   <img width="300" alt="Angular Logo" *ngIf="course.iconUrl; else noImageBlock"
