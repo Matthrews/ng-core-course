@@ -5,6 +5,10 @@
 
 </div>
 
+<div *ngFor="let pair of course | keyvalue">
+  <code>{{ pair | json }}</code>
+</div>
+
 
 <div class="demo">
   <div>Currency:  {{ price | currency: 'EUR' }}</div>
@@ -13,7 +17,7 @@
   <div>Start Date: {{ startDate | date: 'MM/dd/yyyy' }}</div>
 </div>
 
-<code>{{ courses | json }}</code>>
+<code>{{ courses | json }}</code>
 
 <div class="courses">
     <course-card *ngFor="let course of courses | slice:1:3;
