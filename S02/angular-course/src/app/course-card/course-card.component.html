@@ -1,28 +1,40 @@
-<div class="course-card" *ngIf="course"
-  [ngClass]="getCardClass()"
-  [ngStyle]="getCardStyle()">
+<ng-container *ngIf="course">
+  <div class="course-card" [ngClass]="getCardClass()" [ngStyle]="getCardStyle()">
 
-  <div class="course-title">
-    {{ currentIndex + '  ' +  course.description }}
+    <div class="course-title">
+      {{ currentIndex + ' ' + course.description }}
+    </div>
+    <img width="300" alt="Angular Logo" *ngIf="course.iconUrl; else noImageBlock" [src]="course.iconUrl">
+
+    <ng-template #noImageBlock>
+      <p>No image is available.</p>
+    </ng-template>
+
+    <div class="course-description">
+      {{ course.longDescription }}
+    </div>
+
+    <ng-container [ngSwitch]="course.category">
+      <div class="course-category">
+        <ng-container *ngSwitchCase="'BEGINNER'">
+          <div class="category">Beginner</div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'INTERMEDIATE'">
+          <div class="category">Intermediate</div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'ADVANCED'">
+          <div class="category">Advanced</div>
+        </ng-container>
+
+        <ng-container *ngSwitchDefault>
+          <div class="category">All Levels</div>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <button (click)="viewCourceClicked()">View Cource</button>
+
   </div>
-  <img width="300" alt="Angular Logo" *ngIf="course.iconUrl; else noImageBlock"
-    [src]="course.iconUrl">
-
-  <ng-template #noImageBlock>
-    <p>No image is available.</p>
-  </ng-template>
-
-  <div class="course-description">
-    {{ course.longDescription }}
-  </div>
-
-  <div class="course-category" [ngSwitch]="course.category">
-    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
-    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
-    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
-    <div class="category" *ngSwitchDefault>All Levels</div>
-  </div>
-
-  <button (click)="viewCourceClicked()">View Cource</button>
-
-</div>
+</ng-container>
