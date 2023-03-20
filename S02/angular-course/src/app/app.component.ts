@@ -8,6 +8,9 @@ import { COURSES } from '../db-data';
 })
 export class AppComponent {
     courses = COURSES;
+    title = COURSES[1].description;
+    price = 9.99345667;
+    startDate = new Date(2000, 0, 1);
 
     onCourseSelected($event) {
       console.log('onCourseSelected', $event);
